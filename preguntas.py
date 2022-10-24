@@ -50,7 +50,7 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return tbl['_c1'].value.counts().sort_index(0)
+    return tbl0['_c1'].value.counts().sort_index(0)
 
 
 def pregunta_04():
@@ -151,7 +151,7 @@ def pregunta_09():
     """
     columna_año = tbl0
     columna_año['año']=columna_año['_c3'].str[0:4]
-    return
+    return columna_año
 
 
 def pregunta_10():
@@ -197,7 +197,7 @@ def pregunta_11():
     for index, row in a.iterrows():
         row['_c4'] = ",".join([str(int) for int in row['_c4']])
     a.insert(0, '_c0', range(0, 40))
-    return b
+    return a
     
 
 
@@ -217,7 +217,7 @@ def pregunta_12():
     39   39                    ggg:3,hhh:8,jjj:5
     """
     tabla = tbl2
-    tabla['_c5'] = a['_c5a'] + ':' + a['_c5b'].astype(str)
+    tabla['_c5'] = tabla['_c5a'] + ':' + tabla['_c5b'].astype(str)
     a = tabla.groupby('_c0').agg({'_c5': lambda x: sorted(x)})
     for index, row in a.iterrows():
         row['_c5'] = ",".join([str(int) for int in row['_c5']])
