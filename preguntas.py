@@ -50,7 +50,7 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return tbl0['_c1'].value.counts().sort_index(0)
+    return tbl0['_c1'].value_counts().sort_index(0)
 
 
 def pregunta_04():
@@ -149,9 +149,9 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    columna_año = tbl0
-    columna_año['año']=columna_año['_c3'].str[0:4]
-    return columna_año
+    año = tbl0
+    año['year'] = año['_c3'].str[0:4]
+    return año
 
 
 def pregunta_10():
